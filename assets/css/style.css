@@ -1,0 +1,111 @@
+header {
+    font-size: 22px;
+    font-weight: bolder;
+    color: black;
+    text-align: center;
+    margin: 10px 40px;
+    padding: 5px;
+    background-color: rgba(175, 173, 170, 0.527);
+    border-radius: 10px 10px 10px 10px;
+}
+
+header h1{
+    width:auto;
+    text-align:center;
+    padding-left: 205px;
+}
+
+#QandA {
+    display : none;
+}
+.timer-box{
+    float: right;
+    font-size: 22px;
+    padding: 10px;
+    height: fit-content;
+    width: 205px;
+    background-color: rgb(18, 18, 19);
+    border-radius: 10px 10px 10px 10px;
+    text-align: left;
+    color: white;
+}
+
+.quiz-box {
+    font-size: 22px;
+    font-weight: bolder;
+    color: black;
+    text-align: center;
+    margin: 10px 40px;
+    padding: 5px;
+    background-color: rgba(175, 173, 170, 0.527);
+    border-radius: 10px 10px 10px 10px;
+}
+
+#start-button{
+    display: auto;
+    font-size: 20px;
+    border-radius: 10px 10px 10px 10px;
+    color: black;
+    font-weight: bolder;
+    height: 50px;
+    width: 160px;
+    box-shadow: 5px 5px 5px black;
+}
+
+#start-button:hover{
+    background-color: black;
+    color: white;
+}
+#start-button:active{
+    background-color: blue;
+    color: white;
+}
+
+.quiz-box div ul{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.quiz-box ul li{
+    list-style: none;
+    margin-right: 40px;
+    padding: 10px;
+}
+
+
+.questions{
+    text-align: center;
+    font-size: 35px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: antiquewhite;
+    color: black;
+    font-weight: bolder;
+    height: fit-content;
+    box-shadow: 5px 5px 5px black;
+    grid-column:span 2;
+    } 
+
+.answer-button{
+    text-justify: center;
+    text-align: left;
+    font-size: 20px;
+    width: 100%;
+    height: fit-content;
+    border-radius: 10px 10px 10px 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 5px black;    
+    font-weight: bold;
+}
+
+
+.answer-button:hover{
+    background-color: black;
+    color: white;
+    }
+.answer-button:active{
+    background-color: blue;
+    color: white;
+    box-shadow: 2px 2px 2px black;
+}
