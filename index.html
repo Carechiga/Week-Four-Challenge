@@ -18,23 +18,28 @@
                 <button id="start-button">Start Quiz</button>
             </h2>
             <div>
+                <!-- starts hidden but displayed when start button pressed -->
                 <ul id="QandA">
-                    <li class="questions">What is the answer to this question?</li>
-                    <li><button class="answer-button" id="answer-A">Question 1 Answer A</button></li>
-                    <li><button class="answer-button" id="answer-B">Question 1 Answer B</button></li>
-                    <li><button class="answer-button" id="answer-C">Question 1 Answer C</button></li>
-                    <li><button class="answer-button" id="answer-D">Question 1 Answer D</button></li>
+                    <li class="questions" id="question">What is the answer to this question?</li>
+                    <li><button class="answer-button" id="answer-A" data-check="correct">Question 1 Answer A</button></li>
+                    <li><button class="answer-button" id="answer-B" data-check="wrong">Question 1 Answer B</button></li>
+                    <li><button class="answer-button" id="answer-C" data-check="wrong">Question 1 Answer C</button></li>
+                    <li><button class="answer-button" id="answer-D" data-check="wrong">Question 1 Answer D</button></li>
                 </ul>
+            </div>
+            <div class="submissionScreen">
+                <form>
+                    <h1>GAME OVER!</h1>
+                    <h2>Please input your name</h2>
+                    <input type="text" name="playerName" placeholder="Your Name Here"><button class="submitButton">Submit</button></form>
+                    
+                </form>
             </div>
         </div>
         <div class="results-box">
+            <h2>High Scores!</h2>
 
         </div>
-
-
-
-
-
 
         <script src="assets/js/script.js"></script>
     </body>

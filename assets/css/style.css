@@ -1,3 +1,7 @@
+body {
+ background-color: black;
+}
+
 header {
     font-size: 22px;
     font-weight: bolder;
@@ -98,7 +102,22 @@ header h1{
     box-shadow: 5px 5px 5px black;    
     font-weight: bold;
 }
+ 
+#answer-A{
+    background-color: blue;
+}
 
+#answer-B{
+    background-color: purple;
+}
+
+#answer-C{
+    background-color: lightgreen;
+}
+
+#answer-D{
+    background-color: orangered;
+}
 
 .answer-button:hover{
     background-color: black;
@@ -108,4 +127,28 @@ header h1{
     background-color: blue;
     color: white;
     box-shadow: 2px 2px 2px black;
+}
+
+.submissionScreen{
+    display: block;
+}
+input {
+    border-radius: 10px 10px 10px 10px;
+    height: 30px;
+    width: 250px;
+}
+.submitButton{
+    height: 30px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.results-box{
+    font-size: 22px;
+    font-weight: bolder;
+    color: black;
+    text-align: center;
+    margin: 10px 40px;
+    padding: 5px;
+    background-color: rgba(175, 173, 170, 0.527);
+    border-radius: 10px 10px 10px 10px;
 }
