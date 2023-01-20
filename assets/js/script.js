@@ -1,34 +1,48 @@
 var timer = document.querySelector(".timer-box");
 var startButton = document.getElementById("start-button");
+var scoreName = document.querySelector(".nameInput");
+var currentScore = document.getElementById("scoreLine");
 var timeLeft = 180;
+var timeInterval = 0;
 var questionCount = 0;
 var scoreCount = 0;
+var finalScore = 0;
 
 // arrays with strings stored for answer and question numbers and separate arrays to change right or wrong flag as questions increment
-var questions = ["This is question 1", "This is question 2", "This is question 3", "This is question 4", "This is question 5"];
-var answersA = ["Question 1 answer A", "Question 2 answer A", "Question 3 answer A", "Question 4 answer A", "Question 5 answer A"];
-var answersB = ["Question 1 answer B", "Question 2 answer B", "Question 3 answer B", "Question 4 answer B", "Question 5 answer B"];
-var answersC = ["Question 1 answer C", "Question 2 answer C", "Question 3 answer C", "Question 4 answer C", "Question 5 answer C"];
-var answersD = ["Question 1 answer D", "Question 2 answer D", "Question 3 answer D", "Question 4 answer D", "Question 5 answer D"];
-var correctnessA = ["correct", "wrong", "wrong", "correct", "wrong"];
-var correctnessB = ["wrong", "wrong", "wrong", "wrong", "correct"];
-var correctnessC = ["wrong", "wrong", "wrong", "wrong", "wrong"];
-var correctnessD = ["wrong", "correct", "correct", "wrong", "wrong"];
+var questions = ["What does API stand for?", "What symbols are used to denote an HTML elemnt?", "Which of the following would be correct notation for a class attribute in CSS", "How would you increment a variable (i)?", "Which of the following is not a variable type?", "Which of the following is correct formatting of a for loop?", "What does DOM mean?", "How do you declare an object in JavaScript?", "How do you declare a variable in CSS?", "What is Git?"];
+var answersA = ["Automatically Provided Information", "( )", "#class", "i++", "number", "for(i; i < array.length; i++)", "Document Object Method", "var obj = {property1: , property2: }", "var name = value;", "A programming language"];
+var answersB = ["Application Performance Index", "[ ]", "*class", "i+", "array", "for(var i = 0; i < array.length;)", "Document Object Model", "var obj = [property1: , property2: ]", "var name = [value];", "Version control software"];
+var answersC = ["Application Programming Interface", "{ }", "$(class)", "i = +1", "undefined", "for(i++; i < array.length;)", "Digital Office Model", "var obj = property1: , property2: ", "var(--name, value)", "A console command"];
+var answersD = ["Artifical Program Interface", "< >", ".class", "incr(i)", "boolean", "for(var i = 0; i < array.length; i++)", "Direct Object Method", "var obj = 9property1: , property2: 0", "var name(value)", "A JavaScript object"];
+var correctnessA = ["wrong", "wrong", "wrong", "correct", "wrong", "wrong", "wrong", "correct", "wrong", "wrong"];
+var correctnessB = ["wrong", "wrong", "wrong", "wrong", "correct", "wrong", "correct", "wrong", "wrong", "correct"];
+var correctnessC = ["correct", "wrong", "wrong", "wrong", "wrong", "wrong", "wrong", "wrong", "correct", "wrong"];
+var correctnessD = ["wrong", "correct", "correct", "wrong", "wrong", "correct", "wrong", "wrong", "wrong", "wrong"];
 
+//this function ends the quiz and brings up score submission
 function gameOver(){
   document.querySelector(".submissionScreen").style.display = "block";
   document.getElementById("QandA").style.display = "none";
+  document.getElementById("start-button").style.display = "inline";
+  clearInterval(timeInterval);
+  finalScore = Math.floor(scoreCount * (1 + (timeLeft / 60)) * 100);
+  currentScore.textContent = "Score: " + finalScore;
   return;
 }
 
 function startQuiz(){   
     // we want the start button to dissappear once the quiz starts
     document.getElementById("start-button").style.display = "none";
+    document.querySelector(".submissionScreen").style.display = "none";
     // we want the questions and answers to appear once the quiz starts
     document.getElementById("QandA").style.display = "grid";
-        //this is the timer that starts when the start quiz button is pressed
+     //resets the timer if played again 
+    timeLeft = 180;
+    scoreCount = 0;
+    questionCount = 0;  
+      //this is the timer that starts when the start quiz button is pressed  
     timer.textContent = "Time Remaining: 180";
-    var timeInterval = setInterval(function(){
+    timeInterval = setInterval(function(){
       if(timeLeft > 0){
         timer.textContent = "Time Remaining: " + timeLeft;
         timeLeft--;
@@ -40,12 +54,16 @@ function startQuiz(){
       };
 
 function answerSelect(event){
-
+//checks the correctness of the option chosen through data-check if wrong decrements time if correct increases score count;
   if(event.target.getAttribute("data-check") !== "correct"){
-    timeLeft = timeLeft - 15;
+    timeLeft = timeLeft - 20;
+    if(timeLeft < 0){
+      timeLeft = 0;
+    };
    }else{
     scoreCount++;
   };
+  //advances quiz to the next question
   questionCount++;
 
   document.getElementById("question").textContent = questions[questionCount];
@@ -57,11 +75,15 @@ function answerSelect(event){
   document.getElementById("answer-B").setAttribute("data-check", correctnessB[questionCount]);
   document.getElementById("answer-C").setAttribute("data-check", correctnessC[questionCount]);
   document.getElementById("answer-D").setAttribute("data-check", correctnessD[questionCount]);
-  console.log(questionCount);
-  console.log(scoreCount);
+
+//triggers end of game if last question is answered or if time runs out
   if(questionCount > 9 || timeLeft <= 0){
     gameOver();
     }
+}
+
+function highScore(){
+localStorage.setItem("score", JSON.stringify(scoreName.val(), finalScore));
 }
 
 
@@ -73,7 +95,7 @@ function answerSelect(event){
     document.getElementById("answer-B").addEventListener("click", answerSelect);
     document.getElementById("answer-C").addEventListener("click", answerSelect);
     document.getElementById("answer-D").addEventListener("click", answerSelect);
-  
+    document.getElementById("scoreInput").addEventListener("submit", highScore);
 
 
 

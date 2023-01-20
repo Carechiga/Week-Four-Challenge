@@ -35,7 +35,7 @@ header h1{
 }
 
 .quiz-box {
-    font-size: 22px;
+    font-size: 30px;
     font-weight: bolder;
     color: black;
     text-align: center;
@@ -81,7 +81,7 @@ header h1{
 
 .questions{
     text-align: center;
-    font-size: 35px;
+    font-size: 40px;
     border-radius: 10px 10px 10px 10px;
     background-color: antiquewhite;
     color: black;
@@ -94,7 +94,7 @@ header h1{
 .answer-button{
     text-justify: center;
     text-align: left;
-    font-size: 20px;
+    font-size: 30px;
     width: 100%;
     height: fit-content;
     border-radius: 10px 10px 10px 10px;
@@ -130,7 +130,7 @@ header h1{
 }
 
 .submissionScreen{
-    display: block;
+    display: none;
 }
 input {
     border-radius: 10px 10px 10px 10px;
