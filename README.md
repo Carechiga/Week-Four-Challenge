@@ -7,7 +7,7 @@ The score is determined from a combination of correct answers and remaining time
 Each time an incorrect answer is chosen the 20 seconds is deducted from the remaining time.
 At the end of the quiz the user can submit their name and their score/name will be stored to local memory and displayed in the most recent score section.
 
-![alt text](/assets/images/Screenshot.png)
+![alt text](assets/Images/Screenshot.png)
 
 ## Deployment
 https://carechiga.github.io/Week-Four-Challenge/
