@@ -67,57 +67,69 @@ header h1{
 
 .quiz-box div ul{
     display: grid;
-    grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
 
 .quiz-box ul li{
     list-style: none;
-    margin-right: 40px;
-    padding: 10px;
-}
-
+    margin-right: 40px;    
+    }
+ .score-box{
+    text-align: center;
+    font-size: 35px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+    color: green;
+    font-weight: bolder;
+    height: fit-content;
+    box-shadow: 5px 5px 5px black;
+    padding: 15px;
+    float: right;
+    list-style: none;
+ }
 
 .questions{
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: antiquewhite;
+    color: black;
+    font-weight: bolder;
+    height: 150px;
+    padding: 15px;
+    box-shadow: 5px 5px 5px black;
+    grid-column: span 2;
+    } 
+
+.answer-button{
+    text-align: left;
+    font-size: 30px;
     border-radius: 10px 10px 10px 10px;
     background-color: antiquewhite;
     color: black;
     font-weight: bolder;
     height: fit-content;
-    box-shadow: 5px 5px 5px black;
-    grid-column:span 2;
-    } 
-
-.answer-button{
-    text-justify: center;
-    text-align: left;
-    font-size: 30px;
     width: 100%;
-    height: fit-content;
-    border-radius: 10px 10px 10px 10px;
-    padding: 20px;
-    box-shadow: 5px 5px 5px black;    
-    font-weight: bold;
-}
+    padding: 15px;
+    box-shadow: 5px 5px 5px black;
+    }
  
 #answer-A{
     background-color: blue;
-}
+    }
 
 #answer-B{
     background-color: purple;
-}
+    }
 
 #answer-C{
     background-color: lightgreen;
-}
+    }
 
 #answer-D{
     background-color: orangered;
-}
+   }
 
 .answer-button:hover{
     background-color: black;
@@ -143,7 +155,7 @@ input {
 }
 
 .results-box{
-    font-size: 22px;
+    font-size: 30px;
     font-weight: bolder;
     color: black;
     text-align: center;
